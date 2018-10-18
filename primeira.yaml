@@ -1,0 +1,18 @@
+- name: minha primeira playbook
+  hosts: all
+  tasks:
+   - name: adicionando usuario devops
+     user:
+      name: devops
+      password: '$1$EtUsl994$xRustXDQoIIuQBL1I8RU50'
+      shell: /bin/bash
+   - name: adicionando usuario developer
+     user:
+      name: developer
+      password: '$1$EtUsl994$xRustXDQoIIuQBL1I8RU50'
+      shell: /bin/bash
+   - name: adicionando usuario paulo
+     user:
+      name: daniel
+      password: '$1$EtUsl994$xRustXDQoIIuQBL1I8RU50'
+      shell: /bin/bash
