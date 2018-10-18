@@ -1,0 +1,7 @@
+- name: instalando docker na maquina docker
+  hosts: docker
+  tasks:
+   - name: instalando docker
+     shell: |
+      curl -fsSL https://get.docker.com -o get-docker.sh
+      sh get-docker.sh

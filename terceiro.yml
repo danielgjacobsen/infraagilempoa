@@ -1,0 +1,25 @@
+---
+- name: criando um servidor web
+  hosts: all
+  tasks:
+   - name: usuarios comuns do sistema
+     user:
+      name: "{{item}}"
+      password: '$1$Rt9631Sp$zu/Fyl.t5dSdCX219aBui1'
+      shell: /bin/bash
+     with_items:
+      - devops
+      - developer
+      - gabriel
+
+   - name: instalndo aoache2
+     package:
+      name: apache2
+      state: present
+     when: ansible_os_family == "Debian"
+
+   - name: instalando httpd
+     package:
+      name: httpd
+      state: present
+     when: ansible_os_family == "RedHat"
